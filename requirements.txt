@@ -1,5 +1,5 @@
 # Django
-django==3.0.8
+Django==3.2.9
 django-extensions==3.1.5
 
 # Database
