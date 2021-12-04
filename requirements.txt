@@ -1,0 +1,23 @@
+# Django
+django==3.0.8
+django-extensions==3.1.5
+
+# Database
+psycopg2-binary==2.9.2
+
+# REST API
+django-cors-headers==3.2.1
+djangorestframework==3.11.0
+
+# Docs
+drf-yasg==1.17.1
+
+# WSGI-server
+gunicorn==20.1.0
+
+# Tests
+pytest==6.2.4
+pytest-env==0.6.2
+pytest-django==3.9.0
+pytest-factoryboy==2.0.3
+factory-boy==2.12.0

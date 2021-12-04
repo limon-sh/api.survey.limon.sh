@@ -1,0 +1,42 @@
+version: "3"
+
+
+services:
+  backend:
+    image: api-survey-limon
+    container_name: backend
+    build: .
+    user: appuser
+    env_file: .env
+    ports:
+      - 8000:8000
+    volumes:
+      - ./service:/app
+    depends_on:
+      - redis
+      - postgresql
+
+
+  redis:
+    image: redis:6-buster
+    hostname: $${REDIS_HOST}
+    container_name: redis
+    env_file: .env
+    ports:
+      - 8001:6379
+
+
+  postgresql:
+    image: postgres:11-alpine
+    hostname: $${POSTGRES_HOST}
+    container_name: postgresql
+    env_file: .env
+    ports:
+      - 8002:5432
+    volumes:
+      - pg-data-api-survey-limon:/var/lib/postgresql/data
+
+
+
+volumes:
+  pg-data-api-survey-limon:
