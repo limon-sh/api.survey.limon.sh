@@ -9,7 +9,7 @@ services:
     user: appuser
     env_file: .env
     ports:
-      - 8000:8000
+      - 8000:80
     volumes:
       - ./service:/app
     depends_on:
