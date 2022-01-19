@@ -20,4 +20,5 @@ WORKDIR ${APP_PATH}
 USER ${APP_USER}:${APP_USER}
 
 CMD python3 manage.py migrate && \
-		gunicorn --worker-class=gthread -b 0.0.0.0:80 wsgi:application
+    python3 manage.py collectstatic --no-input && \
+	gunicorn --worker-class=gthread -b 0.0.0.0:80 wsgi:application
