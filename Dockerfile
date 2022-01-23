@@ -13,7 +13,7 @@ RUN groupadd --system ${APP_USER} && \
 
 COPY --chown=${APP_USER}:${APP_USER} service/ ${APP_PATH}
 
-EXPOSE 8000
+EXPOSE 80
 
 WORKDIR ${APP_PATH}
 
