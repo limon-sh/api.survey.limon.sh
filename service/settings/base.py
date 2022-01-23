@@ -8,6 +8,8 @@ ROOT_URLCONF = 'api.urls'
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'change_me')
 
+SECURE_SSL_REDIRECT = True
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 INSTALLED_APPS = [
